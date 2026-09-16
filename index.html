@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ride Booking UI</title>
+
+    <!-- Leaflet CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header class="header">
+        <div>
+            <h1>RideGo</h1>
+            <p>Simple & reliable ride booking</p>
+        </div>
+
+        <button id="locationBtn" class="location-btn">
+            📍 Use My Location
+        </button>
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- MAP -->
+        <section class="map-section">
+
+            <div id="map"></div>
+
+            <div class="map-hint">
+                <strong>How to book</strong>
+                <span>Click once for pickup</span>
+                <span>Click again for drop-off</span>
+            </div>
+
+        </section>
+
+
+        <!-- BOOKING PANEL -->
+        <aside class="booking-panel">
+
+            <h2>Book Your Ride</h2>
+
+            <!-- PICKUP -->
+            <div class="location-card">
+
+                <div class="location-icon pickup-icon">
+                    A
+                </div>
+
+                <div>
+                    <small>Pickup</small>
+                    <p id="pickupText">Select pickup location</p>
+                </div>
+
+            </div>
+
+
+            <!-- DROP -->
+            <div class="location-card">
+
+                <div class="location-icon drop-icon">
+                    B
+                </div>
+
+                <div>
+                    <small>Drop-off</small>
+                    <p id="dropText">Select drop-off location</p>
+                </div>
+
+            </div>
+
+
+            <!-- RIDE TYPE -->
+            <label for="rideType">Ride Type</label>
+
+            <select id="rideType">
+
+                <option value="standard">
+                    Standard — ₹12/km
+                </option>
+
+                <option value="premium">
+                    Premium — ₹20/km
+                </option>
+
+                <option value="bike">
+                    Bike — ₹8/km
+                </option>
+
+            </select>
+
+
+            <!-- RIDE DETAILS -->
+            <div class="details">
+
+                <div>
+                    <span>Distance</span>
+                    <strong id="distance">0 km</strong>
+                </div>
+
+                <div>
+                    <span>Estimated Fare</span>
+                    <strong id="fare">₹0</strong>
+                </div>
+
+                <div>
+                    <span>ETA</span>
+                    <strong id="eta">--</strong>
+                </div>
+
+            </div>
+
+
+            <!-- BOOK BUTTON -->
+            <button id="bookBtn" class="book-btn">
+                Book Ride
+            </button>
+
+
+            <!-- RESET -->
+            <button id="resetBtn" class="reset-btn">
+                Reset Locations
+            </button>
+
+
+            <!-- STATUS -->
+            <div id="statusCard" class="status-card">
+
+                <h3>Ride Status</h3>
+
+                <div class="status">
+
+                    <div class="status-dot"></div>
+
+                    <span id="statusText">
+                        Waiting for booking
+                    </span>
+
+                </div>
+
+                <p id="driverText"></p>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+</div>
+
+
+<!-- Leaflet JS -->
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
